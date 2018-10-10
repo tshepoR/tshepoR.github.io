@@ -35,27 +35,27 @@
           <i class="fa fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="services.html">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Ministries.html">Compliance</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="location.html">Clients</a>
-            </li>
-
-          </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="service.html">Services offered</a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="Ministries.html">Company Compliance</a>
+                </li> -->
+                <li class="nav-item">
+                  <a class="nav-link" href="location.html">Our Clients</a>
+                </li>
+    
+              </ul>
         </div>
       </div>
     </nav>
@@ -166,7 +166,7 @@
                 </a>
               </li>
             </ul>
-            <p class="copyright text-muted">Copyright &copy; Your Website 2018</p>
+            <p class="copyright text-muted">Copyright &copy;Thelidza Personnel Solutions  2018</p>
           </div>
         </div>
       </div>
@@ -188,19 +188,20 @@
 </html>
 <script type="text/javascript">
    (function(){
-     alert();
-      emailjs.init("user_T68l58sjGXdyKQiw1egPO");
    
+ var sendEmail=function(){
+  emailjs.init("user_T68l58sjGXdyKQiw1egPO");
     var templateParams = {
     'name': '<p>James</p>',
     'notes': "<p>Check this out!</p>"
-};
- 
-    emailjs.send('gmail', 'template_hQp9OUmK',templateParams)
+      };
+  emailjs.send('gmail', 'template_hQp9OUmK',templateParams)
     .then(function(response) {
        console.log('SUCCESS!', response.status, response.text);
     }, function(error) {
        console.log('FAILED...', error);
     });
-   })();
+ }
+
+})();
 </script>
