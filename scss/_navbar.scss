@@ -1,76 +1,100 @@
+// Styling for the navbar
 #mainNav {
-  min-height: 56px;
-  background-color: $white;
-  .navbar-toggler {
-    font-size: 80%;
-    padding: 0.75rem;
-    color: $primary;
-    border: 1px solid $primary;
-    &:focus {
-      outline: none;
-    }
-  }
+  position: absolute;
+  border-bottom: 1px solid $gray-200;
+  background-color: white;
+  @include sans-serif-font;
   .navbar-brand {
-    color: $black;
-    font-weight: 700;
-    padding: .9rem 0;
+    font-weight: 800;
+    color: $gray-800;
+  }
+  .navbar-toggler {
+    font-size: 12px;
+    font-weight: 800;
+    padding: 13px;
+    text-transform: uppercase;
+    color: $gray-800;
   }
   .navbar-nav {
-    .nav-item {
-      &:hover {
-        color: fade(white, 80%);
-        outline: none;
-        background-color: transparent;
-      }
-      &:active,
-      &:focus {
-        outline: none;
-        background-color: transparent;
+    > li.nav-item {
+      > a {
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
       }
     }
   }
-  @media (min-width: 992px) {
-    padding-top: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-    background-color: transparent;
-    transition: background-color 0.3s ease-in-out;
+  @media only screen and (min-width: 992px) {
+    border-bottom: 1px solid transparent;
+    background: transparent;
     .navbar-brand {
-      padding: .5rem 0;
-      color: fade-out($white, .5);
-    }
-    .nav-link {
-      transition: none;
-      padding: 2rem 1.5rem;
-      color: fade-out($white, .5);
+      padding: 10px 20px;
+      color: $white;
+      &:focus,
       &:hover {
-        color: fade-out($white, .25);
-      }
-      &:active {
-        color: white;
+        color: fade-out($white, .2);
       }
     }
-    &.navbar-shrink {
-      background-color: $white;
-      .navbar-brand {
-        color: $black;
+    .navbar-nav {
+      > li.nav-item {
+        > a {
+          padding: 10px 20px;
+          color: $white;
+          &:focus,
+          &:hover {
+            color: fade-out($white, .2);
+          }
+        }
       }
-      .nav-link {
-        color: $black;
-        padding: 1.5rem 1.5rem 1.25rem;
-        border-bottom: 0.25rem solid transparent;
+    }
+  }
+  @media only screen and (min-width: 992px) {
+    -webkit-transition: background-color 0.2s;
+    -moz-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+    /* Force Hardware Acceleration in WebKit */
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    &.is-fixed {
+      /* when the user scrolls down, we hide the header right above the viewport */
+      position: fixed;
+      top: -67px;
+      -webkit-transition: -webkit-transform 0.2s;
+      -moz-transition: -moz-transform 0.2s;
+      transition: transform 0.2s;
+      border-bottom: 1px solid darken($white, .05);
+      background-color: fade-out($white, .1);
+      .navbar-brand {
+        color: $gray-900;
+        &:focus,
         &:hover {
           color: $primary;
         }
-        &:active {
-          color: darken($primary, 15%);
-        }
-        &.active {
-          color: $primary;
-          outline: none;
-          border-bottom: 0.25rem solid $primary;
+      }
+      .navbar-nav {
+        > li.nav-item {
+          > a {
+            color: $gray-900;
+            &:focus,
+            &:hover {
+              color: $primary;
+            }
+          }
         }
       }
+    }
+    &.is-visible {
+      /* if the user changes the scrolling direction, we show the header */
+      -webkit-transform: translate3d(0, 100%, 0);
+      -moz-transform: translate3d(0, 100%, 0);
+      -ms-transform: translate3d(0, 100%, 0);
+      -o-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
     }
   }
 }
