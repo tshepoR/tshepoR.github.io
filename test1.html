@@ -1,0 +1,72 @@
+
+
+<div data-bind="template :{ afterRender: bindMainNavTabs }">
+    <div class="modal-header">
+        <div class="pull-left col-md-5 header-text">
+            <span>Process Manager</span>
+            <span data-bind="visible:false,text:''"></span>
+            <span data-bind="visible:false,text:''"></span>
+            <!--<label data-bind="if:showUploadIcon"  for="file-upload" class="custom-file-upload btn">
+                <i class="fa fas fa-paperclip"></i>
+            </label>-->
+            <!--<input id="file-upload" type="file" data-bind="event:{change:uploadFile}" />
+            <span data-bind="text:fileName"></span>-->
+        </div>
+        <div class="pull-right col-md-7 modal-buttons">
+            <ul class="header-nav">
+                <li class="color-red" data-bind="click:Close"><a>Close</a><i class="fa fa-remove"></i></li>
+            </ul>
+        </div>
+    </div>
+    <div class="modal-body">
+        <div class="modal-wrapper">
+            <div class="container-fluid main-stroke-nav" id="originationTabs">
+                <ul data-bind="foreach:tabsConfig" class="nav nav-pills nav-bar disabled pointerNotAllowed">
+                    <li role="presentation"  class=" active"  data-bind="click:'',attr:{id:'tab'+$index()}">
+                        <a role="tab" data-toggle="tab">
+                            <i aria-hidden="true" data-bind="css:wF_View_IconName"></i>
+                            <span data-bind="text:wF_View_Description"> </span>
+                            <!-- <span style="display:block">batch</span>-->
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane fade in active" role="tabpanel" id="paramsWorkFlow">
+                    <div class="tab-panel-content">
+                        <tab-process-work-flow id="tab-process-work-flow" params="value: tabPrcoessWorkFlow"></tab-process-work-flow>
+                    </div>
+                </div>
+                <div class="tab-pane fade in" role="tabpanel" id="processFilesWorkFlow">
+                    <div class="tab-panel-content">
+                        <tab-process-files-work-flow id="tab-process-files-work-flow" params="value: tabProcessFilesWorkFlow"></tab-process-files-work-flow>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer footer" data-bind="if: true">
+
+        <div class="row">
+            <div class="col-xs-6 pull-right" data-bind="if:showUploadFileBtn">
+                <button type="button" class="btn btn-success pull-right large" data-bind="click:processWorkFlowData">
+                    <div>
+                        <span>Upload file</span></i>
+                    </div>
+                </button>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-6 pull-right" data-bind="if:showProcessBtn">
+                <button type="button" class="btn btn-success pull-right large" data-bind="click:processWorkFlowData">
+                    <div>
+                        <span>Process</span></i>
+                    </div>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+
+<div class="container-fluid inner-nav">
+    <ul class="nav nav-tabs" role="tablist" data-bind="foreach:tabs">
+        <li role="presentation" data-bind="click:$parent.getPanelsByTabId,css:active" class="pointer"><a role="tab" aria-controls="applications" data-toggle="tab" data-bind="text:description"></a></li>
+    </ul>
+</div>
+<div data-bind="template :{ afterRender: bindMainNavTabs }">
+    <div class="space-margins">
+        <div class="row topMargin">
+            <div data-bind="foreach:columnsArray">
+                <div class="col-md-4" data-bind="css:{rowMargins:column>1}">
+                    <div class="row">
+                        <div data-bind="foreach:processCategories">
+                            <!--ko if:processCategories.processCategoryItems.length>0-->
+                            <div class="col-md-12">
+                                <div class="panel back-color-grey-20">
+                                    <div class="panel-heading">
+                                        <b><span data-bind="text:processCategories.description"></span></b>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="panel-contents">
+                                            <div data-bind="foreach:processCategories.processCategoryItems">
+                                                <!--ko if:description.indexOf("Index Documents")>-1-->
+                                                <div>
+                                                    <div id="new-processes-documents-indexdocuments"></div>
+                                                </div>
+                                                <!--/ko-->
+                                                <div class="openSpacesBetweenListItems">
+                                                    <div data-bind="if:true" style="display:inline;">
+                                                        <i data-bind="css:icon" class="iconFontSize fa"></i>
+                                                    </div>
+                                                    <span class="pointer" data-bind="click:$component.configureWorkFlow"><span data-bind="text:description"></span></span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/ko-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Need to remove just for testing-->
+            <!--<div class="col-md-4">
+                <div class="panel back-color-grey-20">
+                    <div class="panel-heading">
+                        <b>Disbursements</b>
+                    </div>
+                    <div class="panel-body">
+                        <div class="panel-contents">
+                            <div>
+                                <div>
+                                    <div data-bind="if:true" style="display:inline;">
+                                        <i class="fa fas fa-money iconFontSize"></i>
+                                    </div>
+                                    <span class="pointer" data-bind="click:$parent.addNewDisbursement">New disbursement</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+    </div>
+</div>
