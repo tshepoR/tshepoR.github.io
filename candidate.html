@@ -23,6 +23,7 @@
     <link href="css/animate.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./js/cv.js"></script>
+    <script src="./js/knockoutJS.js"></script>
     <style>
       .dropdown-menu.actions li > a i {
     font-size: 16px;
@@ -48,6 +49,11 @@
       }
       .btn {
         /* height: 0px !important; */
+      }
+      .children{
+        position: relative;
+    left: 42px;
+    /* text-decoration-line: underline; */
       }
     
     </style>
@@ -101,7 +107,7 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="page-heading">
-              <h1 style="font-size: 48px;" class="animated fadeInLeftBig">View Candidates </h1>
+              <h1 style="font-size: 48px;" class="animated fadeInLeftBig">Find your candidates! </h1>
               <!-- <span class="subheading">Work with us, we are ready for you at anytime. </span> -->
             </div>
           </div>
@@ -110,75 +116,80 @@
     </header>
 
     <!-- Main Content -->
-  <div class="container">
+  
+<div class="container">
+    <h2 style="text-decoration:underline">View Candidates</h2>      
     <table class="table table-borderless">
       <thead>
-        <tr>
-
-          <th style="text-decoration:underline" scope="col-md-1"><b>Candidates</b></th>
-          <!-- <th scope="col-md-1">Action</th> -->
-        </tr>
+        <!-- <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Email</th>
+        </tr> -->
       </thead>
       <tbody>
-        <tr style="position:relative">
+        <tr data-bind="ifnot:showIT">
+          <td data-bind="click:showITCandidate" style="cursor:pointer"><i id="ITCollapse" class="fa fas fa-plus-circle"></i><b>IT</b>
+        </tr>
+        <tr data-bind="if:showIT"> 
+            <td data-bind="click:showITCandidate"  style="cursor:pointer"><i id="ITCollapse" class="fa fas fa-minus-circle"></i><b>IT</b>
+        </tr>
+        <tr data-bind="if:showIT">
+          <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_01</td>
+          <td><button id="Collins Matentji resume 1" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+        </tr>
+        <tr data-bind="if:showIT">
+            <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_02</td>
+            <td><button  id="Edzani Makhwathana resume" data-bind="click:ViewCv" class=" btn btn-info">Cv</button></td>
+          </tr>
+          <tr data-bind="if:showIT">
+              <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_03</td>
+              <td><button id="Karabo Choeu resume" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+          </tr>
+        <tr data-bind="ifnot:showBookKepper">
+            <td data-bind="click:showBookKepperCandidate" style="cursor:pointer"><i class="fa fas fa-plus-circle"></i><b>BOOKKEEPERS/ FINANCE</b></td>
+  
+          </tr>
+          <tr data-bind="if:showBookKepper">
+              <td data-bind="click:showBookKepperCandidate" style="cursor:pointer"><i class="fa fas fa-minus-circle"></i><b>BOOKKEEPERS/ FINANCE</b></td>
+    
+            </tr>
+          <tr data-bind="if:showBookKepper">
+              <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_01</td>
+              <td><button id="Khensani Mkasi"  data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+          </tr>
+          <tr data-bind="if:showBookKepper">
+              <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_02</td>
+              <td><button id="Rendani" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+          </tr>
+          <tr data-bind="if:showBookKepper">
+              <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_03</td>
+              <td><button class="btn btn-info">Cv</button></td>
+          </tr>
+          <tr data-bind="ifnot:showSupport" >
+              <td data-bind="click:showSupportCandidate" style="cursor:pointer"><i class="fa fas fa-plus-circle"></i><b>SUPPORT</b></td>
+    
+            </tr>
+            <tr data-bind="if:showSupport" >
+                <td data-bind="click:showSupportCandidate" style="cursor:pointer"><i class="fa fas fa-minus-circle"></i><b>SUPPORT</b></td>
       
-          <td style="cursor:pointer"><i id="ITCollapse" class="fa fas fa-plus-circle"></i><b>IT</b>
-            <U id="IT">
-              <li style="list-style:none">
-                <div class="row">
-                  <div class="col-md-3">
-                      Candidate 01
-                  </div>
-                  <div class="col-md-6 .viewCV">
-                      <button onclick="ViewCv('Collins Matentji resume 1')" class="btn btn-outline-info">View Cv</button>
-                  </div>
-        
-                </div>
-              </li>
-              <li style="list-style:none">
-                  <div class="row">
-                    <div class="col-md-3">
-                        Candidate 02
-                    </div>
-                    <div class="col-md-6">
-                      <button onclick="ViewCv('Edzani Makhwathana resume')" class="btn btn-outline-info">View Cv</button>
-                    </div>
-          
-                  </div>
-                </li>
-                <li style="list-style:none">
-                    <div class="row">
-                      <div class="col-md-3">
-                          Candidate 03
-                      </div>
-                      <div class="col-md-6">
-                        <button onclick="ViewCv('Karabo Choeu resume')" class="btn btn-outline-info">View Cv</button>
-                      </div>
-            
-                    </div>
-                  </li>
-        
-            </U>
-          </td>
-          <!-- <td>
-              <button id="viewCv" class="btn btn-info btn-round" onclick="ViewCv()">View Cv</button>
-          </td> -->
-        </tr>
-        <tr>
-
-            <td style="cursor:pointer"><i class="fa fas fa-plus-circle"></i><b>BOOKKEEPERS/ FINANCE</b></td>
-          <!-- <td>
-           <button class="btn btn-info btn-round">View Cv</button>
-          </td> -->
-        </tr>
-        <tr>
-
-            <td style="cursor:pointer"><i class="fa fas fa-plus-circle"></i><b>SUPPORT</b></td>
-          <!-- <td>
-           <button class="btn btn-info btn-round">View Cv</button>
-          </td> -->
-        </tr>
-   
+              </tr>
+            <tr data-bind="if:showSupport">
+                <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_01</td>
+                <td><button class="btn btn-info">Cv</button></td>
+            </tr>
+            <tr data-bind="if:showSupport">
+                <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_02</td>
+                <td><button class="btn btn-info">Cv</button></td>
+            </tr>
+            <tr data-bind="if:showSupport">
+                <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_03</td>
+                <td><button class="btn btn-info">Cv</button></td>
+            </tr>
+            <tr data-bind="if:showSupport">
+                <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_01</td>
+                <td><button class="btn btn-info">Cv</button></td>
+            </tr>
       </tbody>
     </table>
   </div>
@@ -220,6 +231,7 @@
               </li>
             </ul>
             <p class="copyright text-muted">Copyright &copy; Thelidza Personnel Solutions  2019</p>
+            <span data-bind="text:personName"></span>
           </div>
         </div>
       </div>
@@ -236,25 +248,70 @@
 
 </html>
 <script>
-     $("#IT").hide();
-   $("#ITCollapse").click(function(){
 
-    $("#IT").fadeIn();
-    $("#ITCollapse")[0].className='fa fas fa-minus-circle';
-    $("#ITCollapse")[0].id="ITExpand";
-   });
-   $("#ITExpand").click(function(){
+var myViewModel = {
+    personName: 'Bob',
+    personAge: 123,
+    showIT:ko.observable(false),
+    showBookKepper:ko.observable(false),
+    showSupport:ko.observable(false),
+    showITCandidate:function(){
+      if(this.showIT()){
+        this.showIT(false);
+      }else{
+      this.showIT(true);
+      this.showSupport(false);
+      this.showBookKepper(false);
 
-    $("#IT").fadeIn();
-    $("#ITExpand")[0].className='fa fas fa-plus-circle';
-    $("#ITExpand")[0].id="ITCollapse";
-   });
-  function ViewCv(item){
-  // location.href("viewCV.html");
-  localStorage.setItem('cvName',item);
-   location.href="viewCV.html";
+      }
+    }
+    ,
+    showSupportCandidate:function(){
+      if(this.showSupport()){
+        this.showSupport(false);
+      }else{
+      this.showIT(false);
+      this.showSupport(true);
+      this.showBookKepper(false);
 
-  }
+      }
+    },
+    showBookKepperCandidate:function(){
+      if(this.showBookKepper()){
+        this.showBookKepper(false);
+      }else{
+      this.showIT(false);
+      this.showSupport(false);
+      this.showBookKepper(true);
+
+      }
+    },
+    ViewCv:(item,e)=>{
+      localStorage.setItem('cvName',e.target.id);
+     location.href="viewCV.html";
+    }
+};
+  ko.applyBindings(myViewModel);
+
+  //    $("#IT").hide();
+  //  $("#ITCollapse").click(function(){
+
+  //   $("#IT").fadeIn();
+  //   $("#ITCollapse")[0].className='fa fas fa-minus-circle';
+  //   $("#ITCollapse")[0].id="ITExpand";
+  //  });
+  //  $("#ITExpand").click(function(){
+
+  //   $("#IT").fadeIn();
+  //   $("#ITExpand")[0].className='fa fas fa-plus-circle';
+  //   $("#ITExpand")[0].id="ITCollapse";
+  //  });
+  // function ViewCv(item){
+  //  location.href("viewCV.html");
+  // localStorage.setItem('cvName',item);
+  //  location.href="viewCV.html";
+
+  // }
 </script>
 <!-- <script type="text/javascript">
 let base64="iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==";

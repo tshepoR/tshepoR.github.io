@@ -70,7 +70,7 @@
         </div>
       </div>
     </nav>
-    
+
     <!-- Main Content -->
   <div class="container">
         <div style="padding:0px">
@@ -80,7 +80,11 @@
          
   </div>
     <hr>
-
+  <p style="    color: grey;
+    font-size: 12px;
+    margin-left: 41px;">
+        YOUR GROWTH IS OUR GOAL
+    </p>
     <!-- Footer -->
     <footer>
       <div class="container">
@@ -129,7 +133,9 @@
 
 </html>
 <script>
-  debugger
-document.getElementById('cv').src= "img" +"/" + localStorage.cvName +".pdf";
+  if(localStorage.cvName){
+    document.getElementById('cv').src= "img" +"/" + localStorage.cvName +".pdf";
+  }
+
 </script>
 
