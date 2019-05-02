@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Thelidza Personnel Solutions </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./js/cv.js"></script>
+    <script src="./js/knockoutJS.js"></script>
+    <style>
+      .dropdown-menu.actions li > a i {
+    font-size: 16px;
+    padding-top: 2px;
+      }
+      .dropdown-menu > li > a i {
+    float: left;
+    font-size: 20px;
+    padding: 0 11px 0 5px;
+      }
+      .dropdown-menu .arrow {
+    width: 50px;
+    height: 25px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -25px;
+    top: -25px;
+    z-index: 2;
+      }
+      :hover .viewCV{
+        color: aquamarine;
+      }
+      .btn {
+        /* height: 0px !important; */
+      }
+      .children{
+        position: relative;
+    left: 42px;
+    /* text-decoration-line: underline; */
+      }
+    
+    </style>
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><img style="width: 70px;background: white;
+          border-radius: 91px;" src="./img/logo.PNG"></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="service.html">Services offered</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="Ministries.html">Company Compliance</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="vacancies.html">Vacancies</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="candidate.html">candidates</a>
+              </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+   <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/depositphotos_52454291-Students-Celebrating-Graduation.jpg')">
+       <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h1 style="font-size: 48px;" class="animated fadeInLeftBig">Find your candidates! </h1>
+              <!-- <span class="subheading">Work with us, we are ready for you at anytime. </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+  
+<div class="container">
+    <h2 style="text-decoration:underline">View Candidates</h2>      
+    <table class="table table-borderless">
+      <thead>
+        <!-- <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Email</th>
+        </tr> -->
+      </thead>
+      <tbody>
+        <tr data-bind="ifnot:showIT">
+          <td data-bind="click:showITCandidate" style="cursor:pointer"><i id="ITCollapse" class="fa fas fa-plus-circle"></i><b>IT</b>
+        </tr>
+        <tr data-bind="if:showIT"> 
+            <td data-bind="click:showITCandidate"  style="cursor:pointer"><i id="ITCollapse" class="fa fas fa-minus-circle"></i><b>IT</b>
+        </tr>
+        <tr data-bind="if:showIT">
+          <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_01</td>
+          <td><button id="Collins Matentji resume 1" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+        </tr>
+        <tr data-bind="if:showIT">
+            <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_02</td>
+            <td><button  id="Edzani Makhwathana resume" data-bind="click:ViewCv" class=" btn btn-info">Cv</button></td>
+          </tr>
+          <tr data-bind="if:showIT">
+              <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_03</td>
+              <td><button id="Karabo Choeu resume" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+          </tr>
+        <tr data-bind="ifnot:showBookKepper">
+            <td data-bind="click:showBookKepperCandidate" style="cursor:pointer"><i class="fa fas fa-plus-circle"></i><b>BOOKKEEPERS/ FINANCE</b></td>
+  
+          </tr>
+          <tr data-bind="if:showBookKepper">
+              <td data-bind="click:showBookKepperCandidate" style="cursor:pointer"><i class="fa fas fa-minus-circle"></i><b>BOOKKEEPERS/ FINANCE</b></td>
+    
+            </tr>
+          <tr data-bind="if:showBookKepper">
+              <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_01</td>
+              <td><button id="Khensani Mkasi"  data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+          </tr>
+          <tr data-bind="if:showBookKepper">
+              <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_02</td>
+              <td><button id="Rendani" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+          </tr>
+          <tr data-bind="if:showBookKepper">
+              <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_03</td>
+              <td><button class="btn btn-info">Cv</button></td>
+          </tr>
+          <tr data-bind="ifnot:showSupport" >
+              <td data-bind="click:showSupportCandidate" style="cursor:pointer"><i class="fa fas fa-plus-circle"></i><b>SUPPORT</b></td>
+    
+            </tr>
+            <tr data-bind="if:showSupport" >
+                <td data-bind="click:showSupportCandidate" style="cursor:pointer"><i class="fa fas fa-minus-circle"></i><b>SUPPORT</b></td>
+      
+              </tr>
+            <tr data-bind="if:showSupport">
+                <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_01</td>
+                <td><button class="btn btn-info">Cv</button></td>
+            </tr>
+            <tr data-bind="if:showSupport">
+                <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_02</td>
+                <td><button class="btn btn-info">Cv</button></td>
+            </tr>
+            <tr data-bind="if:showSupport">
+                <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_03</td>
+                <td><button class="btn btn-info">Cv</button></td>
+            </tr>
+            <tr data-bind="if:showSupport">
+                <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_01</td>
+                <td><button class="btn btn-info">Cv</button></td>
+            </tr>
+      </tbody>
+    </table>
+  </div>
+    <hr>
+    <p style="    color: grey;
+    font-size: 12px;
+    margin-left: 41px;">
+        YOUR GROWTH IS OUR GOAL
+    </p>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/thelidzaPersonnelSolutions">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; Thelidza Personnel Solutions  2019</p>
+            <span data-bind="text:personName"></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+  </body>
+
+</html>
+<script>
+
+var myViewModel = {
+    personName: 'Bob',
+    personAge: 123,
+    showIT:ko.observable(false),
+    showBookKepper:ko.observable(false),
+    showSupport:ko.observable(false),
+    showITCandidate:function(){
+      if(this.showIT()){
+        this.showIT(false);
+      }else{
+      this.showIT(true);
+      this.showSupport(false);
+      this.showBookKepper(false);
+
+      }
+    }
+    ,
+    showSupportCandidate:function(){
+      if(this.showSupport()){
+        this.showSupport(false);
+      }else{
+      this.showIT(false);
+      this.showSupport(true);
+      this.showBookKepper(false);
+
+      }
+    },
+    showBookKepperCandidate:function(){
+      if(this.showBookKepper()){
+        this.showBookKepper(false);
+      }else{
+      this.showIT(false);
+      this.showSupport(false);
+      this.showBookKepper(true);
+
+      }
+    },
+    ViewCv:(item,e)=>{
+      localStorage.setItem('cvName',e.target.id);
+     location.href="viewCV.html";
+    }
+};
+  ko.applyBindings(myViewModel);
+
+  //    $("#IT").hide();
+  //  $("#ITCollapse").click(function(){
+
+  //   $("#IT").fadeIn();
+  //   $("#ITCollapse")[0].className='fa fas fa-minus-circle';
+  //   $("#ITCollapse")[0].id="ITExpand";
+  //  });
+  //  $("#ITExpand").click(function(){
+
+  //   $("#IT").fadeIn();
+  //   $("#ITExpand")[0].className='fa fas fa-plus-circle';
+  //   $("#ITExpand")[0].id="ITCollapse";
+  //  });
+  // function ViewCv(item){
+  //  location.href("viewCV.html");
+  // localStorage.setItem('cvName',item);
+  //  location.href="viewCV.html";
+
+  // }
+</script>
+<!-- <script type="text/javascript">
+let base64="iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==";
+let buffer=Uint8Array.from(atob(base64), c => c.charCodeAt(0));
+let blob=new Blob([buffer], { type: "image/gif" });
+let url=URL.createObjectURL(blob);
+let img=document.createElement("img");
+img.src=url;
+document.body.appendChild(img);
+    function convertToBase64() {
+        //Read File
+        var selectedFile = document.getElementById("inputFile").files;
+        //Check File is not Empty
+        if (selectedFile.length > 0) {
+            // Select the very first file from list
+            var fileToLoad = selectedFile[0];
+            // FileReader function for read the file.
+            var fileReader = new FileReader();
+            var base64;
+            // Onload of file read the file content
+            fileReader.onload = function(fileLoadedEvent) {
+                base64 = fileLoadedEvent.target.result;
+                // Print data in console
+                console.log(base64);
+            };
+            // Convert data to base64
+            fileReader.readAsDataURL(fileToLoad);
+        }
+    }
+    function test(){
+ var objbuilder = '';
+objbuilder += ('<object width="100%" height="100%" data="data:application/pdf;base64,');
+objbuilder += (myBase64string);
+objbuilder += ('" type="application/pdf" class="internal">');
+objbuilder += ('<embed src="data:application/pdf;base64,');
+objbuilder += (myBase64string);
+objbuilder += ('" type="application/pdf"  />');
+objbuilder += ('</object>');
+
+var win = window.open("#","_blank");
+var title = "my tab title";
+win.document.write('<html><title>'+ title +'</title><body style="margin-top:0px; margin-left: 0px; margin-right: 0px; margin-bottom: 0px;">');
+win.document.write(objbuilder);
+win.document.write('</body></html>');
+layer = jQuery(win.document);
+    }
+</script> -->
