@@ -214,50 +214,54 @@
     <!-- Custom scripts for this template -->
     <script src="js/clean-blog.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mailgun-js@0.21.0/lib/mailgun.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/mailgun-js@0.21.0/lib/mailgun.min.js"></script> -->
+    <script src="./mailgun/app.js"></script>
   </body>
 
 </html>
 <script type="text/javascript">
-//    (function(){
+   (function(){
    
-//  var sendEmail=function(){
-//   emailjs.init("user_T68l58sjGXdyKQiw1egPO");
-//     var templateParams = {
-//     'from': '<p>James</p>',
-//     'notes': "<p>Check this out!</p>"
-//       };
-//   emailjs.send('gmail', 'template_hQp9OUmK',templateParams)
-//     .then(function(response) {
-//        console.log('SUCCESS!', response.status, response.text);
-//     }, function(error) {
-//        console.log('FAILED...', error);
-//     });
-//  }
-//  sendEmail1();
-//  function sendEmail1(){
-//   axios({
-//     method: 'post',
-//     url: `${mailgun.baseUrl}/${mailgun.domain}/messages`,
-//     auth: {
-//         username: 'api',
-//         password: mailgun.apiKey
-//     },
-//     params: {
-//         from: 'Awesome Development Team <noreply@yourdomain.com>',
-//         to: 'testing@example.com',
-//         subject: 'Hello',
-//         text: 'Welcome to the team!'
-//     }
-// }).then(
-//     response => {
-//         console.log(response)
-//     },
-//     reject => {
-//         console.log(reject)
-//     }
-// )
-//  }
+ var sendEmail=function(){
+  emailjs.init("user_T68l58sjGXdyKQiw1egPO");
+    var templateParams = {
+    'from': '<p>James</p>',
+    'notes': "<p>Check this out!</p>"
+      };
+  emailjs.send('gmail', 'template_hQp9OUmK',templateParams)
+    .then(function(response) {
+       console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+       console.log('FAILED...', error);
+    });
+ }
+// sendEmail1();
+ function sendEmail1(){
+  mailgun.baseUrl="  https://api.mailgun.net/v3";
+  mailgun.domain="hotmail.com";
+  mailgun.apiKey="e566273b-cd412e65 ";
+  axios({
+    method: 'post',
+    url: `${mailgun.baseUrl}/${mailgun.domain}/messages`,
+    auth: {
+        username: 'tshepo10@hotmail.com',
+        password: mailgun.apiKey
+    },
+    params: {
+        from: 'Awesome Development Team <noreply@yourdomain.com>',
+        to: 'testing@example.com',
+        subject: 'Hello',
+        text: 'Welcome to the team!'
+    }
+}).then(
+    response => {
+        console.log(response)
+    },
+    reject => {
+        console.log(reject)
+    }
+)
+ }
 
-// })();
+})();
 </script>

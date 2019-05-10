@@ -135,22 +135,38 @@
             <td data-bind="click:showITCandidate"  style="cursor:pointer"><i id="ITCollapse" class="fa fas fa-minus-circle"></i><b>IT</b>
         </tr>
         <tr data-bind="if:showIT">
-          <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_01</td>
+          <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_1</td>
           <td><button id="Collins Matentji resume 1" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
         </tr>
         <tr data-bind="if:showIT">
-            <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_02</td>
+            <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_2</td>
             <td><button  id="Edzani Makhwathana resume" data-bind="click:ViewCv" class=" btn btn-info">Cv</button></td>
           </tr>
           <tr data-bind="if:showIT">
-              <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_03</td>
+              <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_3</td>
               <td><button id="Karabo Choeu resume" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
           </tr>
-        <tr data-bind="ifnot:showBookKepper">
+          <tr data-bind="if:showIT">
+            <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_4</td>
+            <td><button id="Khensani" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+        </tr>
+        <tr data-bind="if:showIT">
+          <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_5</td>
+          <td><button id="MALEFU SARAH MKHWANAZI" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+      </tr>
+      <tr data-bind="if:showIT">
+        <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_6</td>
+        <td><button id="mamello ylali" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+    </tr>
+    <tr data-bind="if:showIT">
+      <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_7</td>
+      <td><button id="Mahwasae" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+  </tr>
+        <!-- <tr data-bind="ifnot:showBookKepper">
             <td data-bind="click:showBookKepperCandidate" style="cursor:pointer"><i class="fa fas fa-plus-circle"></i><b>BOOKKEEPERS/ FINANCE</b></td>
   
-          </tr>
-          <tr data-bind="if:showBookKepper">
+          </tr> -->
+          <!-- <tr data-bind="if:showBookKepper">
               <td data-bind="click:showBookKepperCandidate" style="cursor:pointer"><i class="fa fas fa-minus-circle"></i><b>BOOKKEEPERS/ FINANCE</b></td>
     
             </tr>
@@ -165,8 +181,8 @@
           <tr data-bind="if:showBookKepper">
               <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_03</td>
               <td><button class="btn btn-info">Cv</button></td>
-          </tr>
-          <tr data-bind="ifnot:showSupport" >
+          </tr> -->
+          <!-- <tr data-bind="ifnot:showSupport" >
               <td data-bind="click:showSupportCandidate" style="cursor:pointer"><i class="fa fas fa-plus-circle"></i><b>SUPPORT</b></td>
     
             </tr>
@@ -189,7 +205,7 @@
             <tr data-bind="if:showSupport">
                 <td class="children"><i class="fa as fa-graduation-cap"></i>Candidate_01</td>
                 <td><button class="btn btn-info">Cv</button></td>
-            </tr>
+            </tr> -->
       </tbody>
     </table>
   </div>
@@ -231,7 +247,7 @@
               </li>
             </ul>
             <p class="copyright text-muted">Copyright &copy; Thelidza Personnel Solutions  2019</p>
-            <span data-bind="text:personName"></span>
+            
           </div>
         </div>
       </div>
@@ -250,8 +266,6 @@
 <script>
 
 var myViewModel = {
-    personName: 'Bob',
-    personAge: 123,
     showIT:ko.observable(false),
     showBookKepper:ko.observable(false),
     showSupport:ko.observable(false),
@@ -287,75 +301,10 @@ var myViewModel = {
       }
     },
     ViewCv:(item,e)=>{
+      debugger
       localStorage.setItem('cvName',e.target.id);
      location.href="viewCV.html";
     }
 };
   ko.applyBindings(myViewModel);
-
-  //    $("#IT").hide();
-  //  $("#ITCollapse").click(function(){
-
-  //   $("#IT").fadeIn();
-  //   $("#ITCollapse")[0].className='fa fas fa-minus-circle';
-  //   $("#ITCollapse")[0].id="ITExpand";
-  //  });
-  //  $("#ITExpand").click(function(){
-
-  //   $("#IT").fadeIn();
-  //   $("#ITExpand")[0].className='fa fas fa-plus-circle';
-  //   $("#ITExpand")[0].id="ITCollapse";
-  //  });
-  // function ViewCv(item){
-  //  location.href("viewCV.html");
-  // localStorage.setItem('cvName',item);
-  //  location.href="viewCV.html";
-
-  // }
 </script>
-<!-- <script type="text/javascript">
-let base64="iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==";
-let buffer=Uint8Array.from(atob(base64), c => c.charCodeAt(0));
-let blob=new Blob([buffer], { type: "image/gif" });
-let url=URL.createObjectURL(blob);
-let img=document.createElement("img");
-img.src=url;
-document.body.appendChild(img);
-    function convertToBase64() {
-        //Read File
-        var selectedFile = document.getElementById("inputFile").files;
-        //Check File is not Empty
-        if (selectedFile.length > 0) {
-            // Select the very first file from list
-            var fileToLoad = selectedFile[0];
-            // FileReader function for read the file.
-            var fileReader = new FileReader();
-            var base64;
-            // Onload of file read the file content
-            fileReader.onload = function(fileLoadedEvent) {
-                base64 = fileLoadedEvent.target.result;
-                // Print data in console
-                console.log(base64);
-            };
-            // Convert data to base64
-            fileReader.readAsDataURL(fileToLoad);
-        }
-    }
-    function test(){
- var objbuilder = '';
-objbuilder += ('<object width="100%" height="100%" data="data:application/pdf;base64,');
-objbuilder += (myBase64string);
-objbuilder += ('" type="application/pdf" class="internal">');
-objbuilder += ('<embed src="data:application/pdf;base64,');
-objbuilder += (myBase64string);
-objbuilder += ('" type="application/pdf"  />');
-objbuilder += ('</object>');
-
-var win = window.open("#","_blank");
-var title = "my tab title";
-win.document.write('<html><title>'+ title +'</title><body style="margin-top:0px; margin-left: 0px; margin-right: 0px; margin-bottom: 0px;">');
-win.document.write(objbuilder);
-win.document.write('</body></html>');
-layer = jQuery(win.document);
-    }
-</script> -->
