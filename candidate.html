@@ -62,7 +62,22 @@
     overflow-y: auto;
     height: 300px;
 }
-    
+@media screen and (max-width: 20000px) {
+  .btnCV{
+  visibility:visible;
+ }
+ .hrefCV{
+  visibility:hidden;
+ }
+}
+@media screen and (max-width: 600px) {
+ .btnCV{
+  visibility:hidden;
+ }
+ .hrefCV{
+  visibility:visible;
+ }
+}
     </style>
 
   </head>
@@ -148,71 +163,140 @@
         </tr>
         <tr data-bind="if:showIT">
           <td style="font-size: 13px;" class="children"><i class="fa as fa-graduation-cap"></i>Candidate_1</td>
-          <td><button id="Collins Matentji resume 1" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+          <td>
+            <button id="Collins Matentji resume 1" data-bind="click:ViewCv" class="btn btn-info btnCV">Cv</button>
+            <a class="hrefCV btn btn-primary" href="img/Collins Matentji resume 1.pdf" download>
+              cv
+             </a>
+          </td>
         </tr>
         <tr data-bind="if:showIT">
             <td style="font-size: 13px;" class="children"><i class="fa as fa-graduation-cap"></i>Candidate_2</td>
-            <td><button  id="Edzani Makhwathana resume" data-bind="click:ViewCv" class=" btn btn-info">Cv</button></td>
+            <td><button  id="Edzani Makhwathana resume" data-bind="click:ViewCv" class=" btn btn-info btnCV">Cv</button>
+             <a class="hrefCV btn btn-primary" href="img/Edzani Makhwathana resume.pdf" download>
+              cv
+             </a>
+            </td>
           </tr>
           <tr data-bind="if:showIT">
               <td style="font-size: 13px;" class="children"><i class="fa as fa-graduation-cap"></i>Candidate_3</td>
-              <td><button id="Karabo Choeu resume" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+              <td><button id="Karabo Choeu resume" data-bind="click:ViewCv" class="btn btn-info btnCV">Cv</button>
+                <a class="hrefCV btn btn-primary" href="img/Karabo Choeu resume.pdf" download>
+                  cv
+                 </a>
+              </td>
           </tr>
           <tr data-bind="if:showIT">
             <td style="font-size: 13px;" class="children"><i class="fa as fa-graduation-cap"></i>Candidate_4</td>
-            <td><button id="Khensani" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+            <td><button id="Khensani" data-bind="click:ViewCv" class="btn btn-info btn btnCV">Cv</button>
+              <a class="hrefCV btn btn-primary" href="img/Khensani.pdf" download>
+                cv
+               </a>
+            </td>
         </tr>
         <tr data-bind="if:showIT">
           <td style="font-size: 13px;" class="children"><i class="fa as fa-graduation-cap"></i>Candidate_5</td>
-          <td><button id="MALEFU SARAH MKHWANAZI" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+          <td><button id="MALEFU SARAH MKHWANAZI" data-bind="click:ViewCv" class="btn btn-info btnCV">Cv</button>
+            <a class="hrefCV btn btn-primary" href="img/MALEFU SARAH MKHWANAZI.pdf" download>
+              cv
+             </a>
+          </td>
       </tr>
       <tr data-bind="if:showIT">
         <td  style="font-size: 13px;"class="children"><i class="fa as fa-graduation-cap"></i>Candidate_6</td>
-        <td><button id="mamello ylali" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+        <td><button id="mamello ylali" data-bind="click:ViewCv" class="btn btn-info btnCV">Cv</button>
+          <a class="hrefCV btn btn-primary" href="img/mamello ylali.pdf" download>
+            cv
+           </a>
+        </td>
     </tr>
     <tr data-bind="if:showIT">
       <td style="font-size: 13px;" class="children"><i class="fa as fa-graduation-cap"></i>Candidate_7</td>
-      <td><button id="Mahwasae" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+      <td><button id="Mahwasae" data-bind="click:ViewCv" class="btn btn-info btnCV">Cv</button>
+        <a class="hrefCV btn btn-primary" href="img/Mahwasae.pdf" download>
+          cv
+         </a>
+      </td>
   </tr>
   <tr data-bind="if:showIT">
     <td style="font-size: 13px;"class="children"><i class="fa as fa-graduation-cap"></i>Candidate_8</td>
-    <td><button id="NICO BILANKULU" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+    <td><button id="NICO BILANKULU" data-bind="click:ViewCv" class="btn btn-info btnCV">Cv</button>
+      <a class="hrefCV btn btn-primary" href="img/NICO BILANKULU.pdf" download>
+        cv
+       </a>
+    </td>
 </tr>
 <tr data-bind="if:showIT">
   <td style="font-size: 13px;" class="children"><i class="fa as fa-graduation-cap"></i>Candidate_8</td>
-  <td><button id="nompumelelo msiza" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+  <td><button id="nompumelelo msiza" data-bind="click:ViewCv" class="btn btn-info btnCV">Cv</button>
+   <a class="hrefCV btn btn-primary" href="img/nompumelelo msiza.pdf" download>
+        cv
+       </a>
+  </td>
 </tr>
 <tr data-bind="if:showIT">
   <td  style="font-size: 13px;"class="children"><i class="fa as fa-graduation-cap"></i>Candidate_9</td>
-  <td><button id="nompumelelo msiza" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+  <td><button id="nompumelelo msiza" data-bind="click:ViewCv" class="btn btn-info btnCV">Cv</button>
+    <a class="hrefCV btn btn-primary" href="img/nompumelelo msiza.pdf" download>
+      cv
+     </a>
+  </td>
 </tr>
 <tr data-bind="if:showIT">
   <td style="font-size: 13px;" class="children"><i class="fa as fa-graduation-cap"></i>Candidate_10</td>
-  <td><button id="tebogo micheak kgako" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+  <td><button id="tebogo micheak kgako" data-bind="click:ViewCv" class="btn btn-info btnCV">Cv</button>
+    <a class="hrefCV btn btn-primary" href="img/tebogo micheak kgako.pdf" download>
+      cv
+     </a>
+  </td>
 </tr>
 <tr data-bind="if:showIT">
   <td  style="font-size: 13px;"class="children"><i class="fa as fa-graduation-cap"></i>Candidate_11</td>
-  <td><button id="tebogo micheak kgako" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+  <td><button id="tebogo micheak kgako" data-bind="click:ViewCv" class="btn btn-info btnCV">Cv</button>
+    <a class="hrefCV btn btn-primary" href="img/tebogo micheak kgako.pdf" download>
+      cv
+     </a>
+  </td>
 </tr>
 <tr data-bind="if:showIT">
   <td style="font-size: 13px;" class="children"><i class="fa as fa-graduation-cap"></i>Candidate_12</td>
-  <td><button id="teprlo clinton mello" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+  <td><button id="teprlo clinton mello" data-bind="click:ViewCv" class="btn btn-info btnCV">Cv</button>
+    <a class="hrefCV btn btn-primary" href="img/teprlo clinton mello.pdf" download>
+      cv
+     </a>
+  </td>
 </tr>
 <tr data-bind="if:showIT">
   <td  style="font-size: 13px;"class="children"><i class="fa as fa-graduation-cap"></i>Candidate_13</td>
-  <td><button id="teprlo clinton mello" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+  <td><button id="teprlo clinton mello" data-bind="click:ViewCv" class="btn btn-info btnCV">Cv</button>
+    <a class="hrefCV btn btn-primary" href="img/teprlo clinton mello.pdf" download>
+      cv
+     </a>
+  </td>
 </tr>
 <tr data-bind="if:showIT">
   <td  style="font-size: 13px;"class="children"><i class="fa as fa-graduation-cap"></i>Candidate_14</td>
-  <td><button id="sabelo mchazeleni miya" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+  <td><button id="sabelo mchazeleni miya" data-bind="click:ViewCv" class="btn btn-info btnCV">Cv</button>
+    <a class="hrefCV btn btn-primary" href="img/sabelo mchazeleni miya.pdf" download>
+      cv
+     </a>
+  </td>
 </tr>
 <tr data-bind="if:showIT">
   <td style="font-size: 13px;" class="children"><i class="fa as fa-graduation-cap"></i>Candidate_15</td>
-  <td><button id="thabo wessie" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+  <td><button id="thabo wessie" data-bind="click:ViewCv" class="btn btn-info btnCV">Cv</button>
+    <a class="hrefCV btn btn-primary" href="img/thabo wessie.pdf" download>
+      cv
+     </a>
+  </td>
 </tr>
 <tr data-bind="if:showIT">
   <td style="font-size: 13px;" class="children"><i class="fa as fa-graduation-cap"></i>Candidate_16</td>
-  <td><button id="TRUST MAUCHAZA" data-bind="click:ViewCv" class="btn btn-info">Cv</button></td>
+  <td><button id="TRUST MAUCHAZA" data-bind="click:ViewCv" class="btn btn-info btnCV">Cv</button>
+    <a class="hrefCV btn btn-primary" href="img/TRUST MAUCHAZA.pdf" download>
+      cv
+     </a>
+  </td>
 </tr>
         <!-- <tr data-bind="ifnot:showBookKepper">
             <td data-bind="click:showBookKepperCandidate" style="cursor:pointer"><i class="fa fas fa-plus-circle"></i><b>BOOKKEEPERS/ FINANCE</b></td>
