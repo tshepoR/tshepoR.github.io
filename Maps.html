@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geolocation</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+    #map{
+        height: 400px;
+        width: 100%;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+function initMap() {
+    debugger
+  var locationAddressCords = JSON.parse(localStorage.getItem('coordinates'));
+  var myLatLng = {lat:Number(locationAddressCords.latitude), lng: Number(locationAddressCords.longitude)}
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 5,
+    center: myLatLng
+  });
+
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'User address'
+  });
+}
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6vvN0WC8OAbpCzBkGzav0jxqPOJeqY0Y&callback=initMap">
+    </script>
+  </body>
+</html>

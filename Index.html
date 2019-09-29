@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random Users</title>
+    <link rel="stylesheet" href="Index.css">
+</head>
+<body>
+    <div class="container" data-bind="template:{afterRender:getRandomUsers}">
+
+        <div class="contentHeader">
+                <img data-bind="attr:{src:userPictureUrl}" alt="no image found"/>
+        </div>
+        <div class="contentDiv">
+             <div class="c-card">
+               <h3 class="c-card__subtitle" data-bind="text:headTitle"></h3>
+               <h2 class="c-card__subtitl u-text--lg" data-bind="text:displayText"></h2>
+               <ul class="tab-row">
+                    <li data-bind="event:{mouseover:getUserFullName},css:{defaultActiveClass:isOnload}" class="tabs__list"><img class="u-image" src="Assets/svg/icons/misc/user.svg"></li>
+                    <li data-bind="event:{mouseover:getUserEmail}" class="tabs__list"><img class="u-image" src="Assets/svg/icons/misc/email.svg"></li>
+                    <li data-bind="event:{mouseover:getUserBirthDay}" class="tabs__list"><img class="u-image" src="Assets/svg/icons/misc/calendar.svg"></li>
+                    <li data-bind="event:{mouseover:getUserAddress}" class="tabs__list"><img class="u-image" src="Assets/svg/icons/misc/map-location.svg"></li>
+                    <li data-bind="event:{mouseover:getUserCellPhone}" class="tabs__list"><img class="u-image" src="Assets/svg/icons/misc/call.svg"></li>
+                    <li data-bind="event:{mouseover:getUserPassword}" class="tabs__list"><img class="u-image" src="Assets/svg/icons/misc/locked.svg"></li>
+                </ul>
+             </div>
+           
+        </div>
+        <button data-bind="click:showNextUser" class="button">Show next user</button>
+        <a class="button" href="Maps.html" target="_black">View address on map</a>
+    </div>
+    <script src="js/knockout.js"></script>
+    <script src="Index.js"></script>
+</body>
+</html>
